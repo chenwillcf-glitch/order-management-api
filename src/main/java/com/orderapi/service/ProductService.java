@@ -2,7 +2,6 @@ package com.orderapi.service;
 
 import com.orderapi.model.Product;
 import com.orderapi.repository.ProductRepository;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +9,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Slf4j
 public class ProductService {
 
     @Autowired
@@ -38,7 +36,7 @@ public class ProductService {
      */
     public Product createProduct(Product product) {
         // No validation done here - prices can be negative!
-        log.info("Creating product: {}", product.getName());
+        System.out.println("Creating product: " + product.getName());
         return productRepository.save(product);
     }
 
