@@ -47,32 +47,26 @@ The API will start on `http://localhost:8080`
 - `GET /api/orders` - Retrieve all orders
 - `GET /api/orders/{id}` - Retrieve order by ID
 - `POST /api/orders` - Create new order
-- `PUT /api/orders/{id}` - Update order (TODO: incomplete)
+- `PUT /api/orders/{id}/status` - Update order status
+- `POST /api/orders/{orderId}/products/{productId}` - Add product to order
+- `GET /api/orders/customer/{customerId}` - Get orders by customer
+- `GET /api/orders/status/{status}` - Get orders by status
 - `DELETE /api/orders/{id}` - Delete order
 
 ### Products
 - `GET /api/products` - Retrieve all products
+- `GET /api/products/{id}` - Retrieve product by ID
 - `POST /api/products` - Create new product
+- `PUT /api/products/{id}` - Update product
+- `DELETE /api/products/{id}` - Delete product
 
 ### Customers
 - `GET /api/customers` - Retrieve all customers
+- `GET /api/customers/{id}` - Retrieve customer by ID
 - `POST /api/customers` - Create new customer
-
-## Known Issues
-
-- [ ] Missing error handling in OrderService
-- [ ] Incomplete validation for Order amounts
-- [ ] No authorization/authentication
-- [ ] Limited test coverage
-- [ ] Inconsistent exception handling across controllers
-
-## TODO
-
-- Add pagination to list endpoints
-- Implement transaction management
-- Add logging throughout
-- Complete unit test coverage
-- Add API documentation (Swagger)
+- `PUT /api/customers/{id}` - Update customer
+- `DELETE /api/customers/{id}` - Delete customer
+- `GET /api/customers/email/{email}` - Get customer by email
 
 ## Testing
 
@@ -80,5 +74,3 @@ Run tests with:
 ```bash
 mvn test
 ```
-
-**Note:** Test coverage is incomplete and intentionally has gaps.
